@@ -1,19 +1,14 @@
-import { Stack, Link } from 'expo-router';
+import { Link } from "expo-router";
+import { View } from "react-native";
 
-import { Button } from '~/components/Button';
-import { Container } from '~/components/Container';
-import { ScreenContent } from '~/components/ScreenContent';
-
-export default function Home() {
+export default function Index() {
   return (
-    <>
-      <Stack.Screen options={{ title: 'Home' }} />
-      <Container>
-        <ScreenContent path="app/index.tsx" title="Home" />
-        <Link href={{ pathname: '/details', params: { name: 'Dan' } }} asChild>
-          <Button title="Show Details" />
-        </Link>
-      </Container>
-    </>
+    <View>
+      <Link href="/screens/login/login_view" style={{ padding: 10, borderWidth: 1 }}>Ir para a tela ENTRAR/LOGIN</Link>
+      <Link href="/screens/perfil/perfil_usuario_view" style={{ padding: 10, borderWidth: 1 }}>Ir para a tela PERFIL</Link>
+      <Link href="/screens/empresas/empresas_view" style={{ padding: 10, borderWidth: 1 }}>Ir para a tela EMPRESAS</Link>
+      <Link href="/screens/estagios/estagios_view" style={{ padding: 10, borderWidth: 1 }}>Ir para a tela ESTÁGIOS</Link>
+      {/* <Link href="/screens/registro_usuarios/registro" style={{ padding: 10, borderWidth: 1 }}>Ir para a tela REGISTRO</Link> */}
+    </View>
   );
 }
